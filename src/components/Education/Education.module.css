@@ -1,0 +1,13 @@
+.section {
+  padding: 4rem 1.5rem;
+  background: var(--color-bg-alt);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.timeline {
+  max-width: 650px;
+}

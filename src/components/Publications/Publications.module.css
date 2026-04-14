@@ -1,0 +1,26 @@
+.section {
+  padding: 4rem 1.5rem;
+  background: var(--color-bg-alt);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.list {
+  list-style: none;
+}
+
+.item {
+  padding: 1rem 1.25rem;
+  border-left: 3px solid var(--color-primary);
+  background: var(--color-bg);
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+}
+
+.citation {
+  font-size: 0.92rem;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
