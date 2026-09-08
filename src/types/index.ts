@@ -7,13 +7,27 @@ export interface Education {
   details?: string[];
 }
 
-export interface ResearchProject {
+export interface ProjectDetails {
+  title: string;
+  period: string;
+  bullets: string[];
+  tags: string[];
+  link?: string;
+  linkLabel?: string;
+}
+
+export interface ResearchProject extends ProjectDetails {
+  affiliation: string;
+  role: string;
+}
+
+export interface ResearchGroup {
   title: string;
   affiliation: string;
   role: string;
   period: string;
-  bullets: string[];
-  tags: string[];
+  principalInvestigator: string;
+  projects: ProjectDetails[];
 }
 
 export interface Publication {
@@ -24,15 +38,12 @@ export interface Publication {
   volume?: string;
   pages?: string;
   link?: string;
+  status?: "submitted";
 }
 
-export interface Project {
-  title: string;
+export interface Project extends ProjectDetails {
   role: string;
-  period: string;
-  bullets: string[];
-  tags: string[];
-  link?: string;
+  affiliation?: string;
 }
 
 export interface Award {

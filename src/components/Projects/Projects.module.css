@@ -7,6 +7,18 @@
   margin: 0 auto;
 }
 
+.group + .group {
+  margin-top: 4rem;
+}
+
+.projectLink {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+
 .cards {
   display: flex;
   flex-direction: column;

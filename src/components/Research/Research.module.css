@@ -39,6 +39,21 @@
 .meta {
   font-size: 0.85rem;
   color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+.subproject {
+  border-top: 1px solid var(--color-border);
+  padding-top: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.projectLink {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  overflow-wrap: anywhere;
 }
 
 .bullets {

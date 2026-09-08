@@ -22,6 +22,7 @@ export default function Publications() {
                   )
                 )}{" "}
                 ({pub.year}). {pub.title}.{" "}
+                {pub.status === "submitted" && "Submitted to the "}
                 <em>{pub.journal}</em>
                 {pub.volume && `, ${pub.volume}`}
                 {pub.pages && `, ${pub.pages}`}.

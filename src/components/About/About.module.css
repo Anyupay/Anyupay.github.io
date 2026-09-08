@@ -10,7 +10,7 @@
 
 .grid {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
   gap: 3rem;
   align-items: start;
 }
@@ -41,17 +41,20 @@
   font-weight: 600;
   color: var(--color-heading);
   min-width: 80px;
+  flex-shrink: 0;
   font-size: 0.9rem;
 }
 
 .value {
   color: var(--color-text-secondary);
   font-size: 0.9rem;
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 @media (max-width: 768px) {
   .grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 2rem;
   }
 }

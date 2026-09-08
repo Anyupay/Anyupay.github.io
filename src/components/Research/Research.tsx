@@ -1,7 +1,35 @@
 import { research } from "../../data/content";
+import type { ProjectDetails } from "../../types";
 import SectionHeader from "../shared/SectionHeader";
 import Tag from "../shared/Tag";
 import styles from "./Research.module.css";
+
+function ResearchDetails({ project }: { project: ProjectDetails }) {
+  return (
+    <>
+      <ul className={styles.bullets}>
+        {project.bullets.map((bullet) => (
+          <li key={bullet}>{bullet}</li>
+        ))}
+      </ul>
+      <div className={styles.tags}>
+        {project.tags.map((tag) => (
+          <Tag key={tag} label={tag} />
+        ))}
+      </div>
+      {project.link && (
+        <a
+          href={project.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.projectLink}
+        >
+          {project.linkLabel ?? "View project"} <span aria-hidden="true">↗</span>
+        </a>
+      )}
+    </>
+  );
+}
 
 export default function Research() {
   return (
@@ -9,7 +37,7 @@ export default function Research() {
       <div className={styles.container}>
         <SectionHeader
           title="Research Experience"
-          subtitle="Selected research projects at the intersection of ML and biomedical engineering"
+          subtitle="Machine learning for drug discovery, behavior analysis, and medical imaging"
         />
         <div className={styles.cards}>
           {research.map((project) => (
@@ -20,17 +48,23 @@ export default function Research() {
                   {project.affiliation} &middot; {project.role} &middot;{" "}
                   {project.period}
                 </p>
+                {"projects" in project && (
+                  <p className={styles.meta}>PI: {project.principalInvestigator}</p>
+                )}
               </div>
-              <ul className={styles.bullets}>
-                {project.bullets.map((bullet, i) => (
-                  <li key={i}>{bullet}</li>
-                ))}
-              </ul>
-              <div className={styles.tags}>
-                {project.tags.map((tag) => (
-                  <Tag key={tag} label={tag} />
-                ))}
-              </div>
+              {"projects" in project ? (
+                project.projects.map((subproject) => (
+                  <div key={subproject.title} className={styles.subproject}>
+                    <div className={styles.cardHeader}>
+                      <h4 className={styles.cardTitle}>{subproject.title}</h4>
+                      <p className={styles.meta}>{subproject.period}</p>
+                    </div>
+                    <ResearchDetails project={subproject} />
+                  </div>
+                ))
+              ) : (
+                <ResearchDetails project={project} />
+              )}
             </div>
           ))}
         </div>

@@ -1,6 +1,7 @@
 import type {
   Education,
   ResearchProject,
+  ResearchGroup,
   Publication,
   Project,
   Award,
@@ -13,12 +14,12 @@ import type {
 export const name = "Anyu Pan";
 
 export const tagline =
-  "M.S. in Computer Science & Bioengineering at the University of Pennsylvania";
+  "M.S. in Computer and Information Science & Bioengineering at the University of Pennsylvania";
 
 export const subtitle =
-  "Medical Image Analysis | Biomedical AI | Deep Learning for Healthcare";
+  "Agentic AI | AI for Healthcare | Computer Vision | Computational Drug Discovery";
 
-export const email = "pananyu@seas.upenn.edu";
+export const email = "pananyu@engineering.upenn.edu";
 
 export const navLinks: NavLink[] = [
   { label: "About", href: "#about" },
@@ -34,7 +35,7 @@ export const navLinks: NavLink[] = [
 export const socialLinks: SocialLink[] = [
   {
     label: "Email",
-    href: "mailto:pananyu@seas.upenn.edu",
+    href: `mailto:${email}`,
     icon: "email",
   },
   {
@@ -56,12 +57,13 @@ export const socialLinks: SocialLink[] = [
 
 export const about = {
   summary: [
-    "I am a dual-degree M.S. student at the University of Pennsylvania studying Computer and Information Science and Bioengineering (2024\u20132027). My research interests lie at the intersection of machine learning and biomedical engineering, with experience in deep learning for medical imaging, brain\u2013computer interfaces, and distributed systems.",
+    "I am a dual-degree M.S. student in Computer and Information Science and Bioengineering at the University of Pennsylvania (2024\u20132027). My research interests include agentic AI, AI for healthcare, computer vision, and computational drug discovery.",
+    "I am a Graduate Student Researcher in Shen Lab, spanning Penn Engineering (CIS) and Penn Medicine, advised by Professor Li Shen. My current work focuses on Alzheimer\u2019s disease drug discovery with integrated target evidence and Boltz-2 affinity fine-tuning, and mouse behavior classification with video transformers. I also build and deploy AI agents, including WeatherWise Trip Concierge.",
     "Previously, I earned a B.Eng. in Biomedical Engineering with First Class Honours from the University of Dundee through a joint programme with Northeastern University, China.",
   ],
   info: [
-    { label: "Affiliation", value: "University of Pennsylvania" },
-    { label: "Email", value: "pananyu@seas.upenn.edu" },
+    { label: "Affiliation", value: "Shen Lab, University of Pennsylvania" },
+    { label: "Email", value: email },
     { label: "Location", value: "Philadelphia, PA" },
   ],
 };
@@ -83,11 +85,41 @@ export const education: Education[] = [
   },
 ];
 
-export const research: ResearchProject[] = [
+export const research: (ResearchProject | ResearchGroup)[] = [
+  {
+    title: "Shen Lab | University of Pennsylvania",
+    affiliation: "Penn Engineering (CIS) & Penn Medicine",
+    role: "Graduate Student Researcher",
+    period: "Jun 2026 \u2013 Present",
+    principalInvestigator: "Li Shen, Ph.D.",
+    projects: [
+      {
+        title: "Alzheimer\u2019s Disease Drug Discovery",
+        period: "Jul 2026 \u2013 Present",
+        bullets: [
+          "Built an AGORA-centered target database integrating BindingDB, ChEMBL, UniProt, RCSB PDB, Drugs@FDA, and ClinicalTrials.gov using DuckDB; linked 967 targets, 452,249 compounds, and 1,430,260 measurements",
+          "Curated a PIK3CA potency dataset and fine-tuned the Boltz-2 affinity head; improved Pearson r from 0.248 to 0.560 and reduced MAE from 0.900 to 0.706 on 469 held-out compounds",
+          "Developed and deployed AGORA Target & Drug Evidence Explorer on Azure, providing a public platform for AD target assessment, drug-target evidence queries, curated data exports, and access to fine-tuned models and evaluation results",
+        ],
+        tags: ["Boltz-2", "Drug Discovery", "DuckDB", "RDKit", "Azure"],
+        link: "https://agora-evidence-ae3f8403.azurewebsites.net/",
+        linkLabel: "AGORA Target & Drug Evidence Explorer",
+      },
+      {
+        title: "Mouse Scratching Classification with Video Transformers",
+        period: "Jun 2026 \u2013 Present",
+        bullets: [
+          "Trained Video Swin Transformer and adapted InternVideo-Next with low-rank adaptation (LoRA) to classify scratching versus nonscratching mouse video clips",
+          "Evaluated InternVideo-Next Base on test videos from different labs; exploratory results showed 99.93% F1 and 99.93% accuracy on in-lab clips and 96.47% F1 and 96.53% accuracy on clips from other labs",
+        ],
+        tags: ["Video Swin Transformer", "InternVideo-Next", "LoRA", "PyTorch", "Slurm"],
+      },
+    ],
+  },
   {
     title: "Advancing Glioma Classification with Swin Transformers",
     affiliation: "University of Dundee & University of Cambridge",
-    role: "Honor Project",
+    role: "Honours Project",
     period: "Sep 2023 \u2013 May 2024",
     bullets: [
       "Integrated Swin Transformer blocks into a WSI-based glioma classification framework, improving accuracy to 78.03% (from 73.11% with a standard ViT)",
@@ -95,6 +127,22 @@ export const research: ResearchProject[] = [
       "Reduced GPU memory usage by >60%, enabling larger batch sizes and more efficient training on GPU-accelerated servers",
     ],
     tags: ["PyTorch", "Swin Transformer", "Medical Imaging", "WSI"],
+  },
+];
+
+export const researchProjects: Project[] = [
+  {
+    title: "WeatherWise Trip Concierge",
+    role: "Google/Kaggle AI Agents Capstone",
+    period: "Jun 2026 \u2013 Jul 2026",
+    bullets: [
+      "Built a Google ADK travel-planning agent with MCP tools to retrieve forecasts, score daily weather risks, and recommend nearby cities",
+      "Implemented rule-based risk scoring and Pydantic input validation; tested prompt-injection and missing-forecast cases",
+      "Created AGENTS.md, project context documentation, and reusable agent skills; deployed the web app on Google Cloud Run using Docker",
+    ],
+    tags: ["Google ADK", "MCP", "Agent Skills", "Pydantic", "Docker", "Google Cloud Run"],
+    link: "https://weatherwise-trip-concierge-wxbwmd64ca-uc.a.run.app/",
+    linkLabel: "Open WeatherWise Trip Concierge",
   },
   {
     title: "Brain\u2013Computer Interface: Decoding Finger Flexion from ECoG",
@@ -142,6 +190,14 @@ export const publications: Publication[] = [
     year: 2023,
     volume: "226",
     pages: "113\u2013119",
+  },
+  {
+    authors: "Pan, A., Zhai, T., Lee, J., Zheng, C., Kim, D., & Shen, L.",
+    title:
+      "Integrating Multisource Target Evidence with Machine-Learning Potency Prediction for Alzheimer\u2019s Disease Drug Discovery",
+    journal: "AMIA 2027 Amplify Informatics Summit (regular paper)",
+    year: 2026,
+    status: "submitted",
   },
 ];
 
@@ -229,12 +285,25 @@ export const skills: SkillCategory[] = [
       "XGBoost",
       "ViT",
       "Swin Transformer",
+      "Video Swin Transformer",
+      "InternVideo-Next",
+      "LoRA",
+      "Boltz-2",
       "YOLO",
+      "nnU-Net",
       "Scikit-Learn",
       "SciPy",
       "NumPy",
       "Pandas",
     ],
+  },
+  {
+    name: "Agent Development",
+    skills: ["Google ADK", "MCP", "Agent Skills", "Docker", "Google Cloud Run"],
+  },
+  {
+    name: "Research Infrastructure",
+    skills: ["RDKit", "DuckDB", "Azure", "Slurm"],
   },
   {
     name: "Tools",
