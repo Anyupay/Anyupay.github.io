@@ -58,7 +58,7 @@ export const socialLinks: SocialLink[] = [
 export const about = {
   summary: [
     "I am a dual-degree M.S. student in Computer and Information Science and Bioengineering at the University of Pennsylvania (2024\u20132027). My research interests include agentic AI, AI for healthcare, computer vision, and computational drug discovery.",
-    "I am a Graduate Student Researcher in Shen Lab, spanning Penn Engineering (CIS) and Penn Medicine, advised by Professor Li Shen. My current work focuses on Alzheimer\u2019s disease drug discovery with integrated target evidence and Boltz-2 affinity fine-tuning, and automated mouse scratching detection with video transformers in Scratch-AID+. I also build and deploy AI agents, including WeatherWise Trip Concierge.",
+    "I am a Graduate Student Researcher in Shen Lab, spanning Penn Engineering (CIS) and Penn Medicine, advised by Professor Li Shen. My current work focuses on Alzheimer\u2019s disease drug discovery with integrated target evidence and Boltz-2 affinity fine-tuning, and automated mouse scratching detection with video transformers in Scratch-AID+. I also build and deploy AI agents.",
     "Previously, I earned a B.Eng. in Biomedical Engineering with First Class Honours from the University of Dundee through a joint programme with Northeastern University, China.",
   ],
   info: [
@@ -141,8 +141,6 @@ export const researchProjects: Project[] = [
       "Created AGENTS.md, project context documentation, and reusable agent skills; deployed the web app on Google Cloud Run using Docker",
     ],
     tags: ["Google ADK", "MCP", "Agent Skills", "Pydantic", "Docker", "Google Cloud Run"],
-    link: "https://weatherwise-trip-concierge-wxbwmd64ca-uc.a.run.app/",
-    linkLabel: "Open WeatherWise Trip Concierge",
   },
   {
     title: "Brain\u2013Computer Interface: Decoding Finger Flexion from ECoG",
