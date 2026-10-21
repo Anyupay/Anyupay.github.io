@@ -8,8 +8,8 @@ export default function Publications() {
       <div className={styles.container}>
         <SectionHeader title="Publications" />
         <ul className={styles.list}>
-          {publications.map((pub, i) => (
-            <li key={i} className={styles.item}>
+          {publications.map((pub) => (
+            <li key={pub.title} className={styles.item}>
               <p className={styles.citation}>
                 {pub.authors.split("Pan, A.").map((part, j, arr) =>
                   j < arr.length - 1 ? (
@@ -24,9 +24,27 @@ export default function Publications() {
                 ({pub.year}). {pub.title}.{" "}
                 {pub.status === "submitted" && "Submitted to the "}
                 <em>{pub.journal}</em>
+                {pub.status === "accepted" && ", accepted"}
                 {pub.volume && `, ${pub.volume}`}
                 {pub.pages && `, ${pub.pages}`}.
+                {pub.link && (
+                  <>
+                    {" "}
+                    <a
+                      href={pub.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Read ${pub.title} on bioRxiv`}
+                      className={styles.paperLink}
+                    >
+                      [Paper]
+                    </a>
+                  </>
+                )}
               </p>
+              {pub.contributionNote && (
+                <p className={styles.note}>{pub.contributionNote}</p>
+              )}
             </li>
           ))}
         </ul>

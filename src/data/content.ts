@@ -58,7 +58,7 @@ export const socialLinks: SocialLink[] = [
 export const about = {
   summary: [
     "I am a dual-degree M.S. student in Computer and Information Science and Bioengineering at the University of Pennsylvania (2024\u20132027). My research interests include agentic AI, AI for healthcare, computer vision, and computational drug discovery.",
-    "I am a Graduate Student Researcher in Shen Lab, spanning Penn Engineering (CIS) and Penn Medicine, advised by Professor Li Shen. My current work focuses on Alzheimer\u2019s disease drug discovery with integrated target evidence and Boltz-2 affinity fine-tuning, and mouse behavior classification with video transformers. I also build and deploy AI agents, including WeatherWise Trip Concierge.",
+    "I am a Graduate Student Researcher in Shen Lab, spanning Penn Engineering (CIS) and Penn Medicine, advised by Professor Li Shen. My current work focuses on Alzheimer\u2019s disease drug discovery with integrated target evidence and Boltz-2 affinity fine-tuning, and automated mouse scratching detection with video transformers in Scratch-AID+. I also build and deploy AI agents, including WeatherWise Trip Concierge.",
     "Previously, I earned a B.Eng. in Biomedical Engineering with First Class Honours from the University of Dundee through a joint programme with Northeastern University, China.",
   ],
   info: [
@@ -109,10 +109,10 @@ export const research: (ResearchProject | ResearchGroup)[] = [
         title: "Mouse Scratching Classification with Video Transformers",
         period: "Jun 2026 \u2013 Present",
         bullets: [
-          "Trained Video Swin Transformer and adapted InternVideo-Next with low-rank adaptation (LoRA) to classify scratching versus nonscratching mouse video clips",
-          "Evaluated InternVideo-Next Base on test videos from different labs; exploratory results showed 99.93% F1 and 99.93% accuracy on in-lab clips and 96.47% F1 and 96.53% accuracy on clips from other labs",
+          "Fine-tuned Video Swin Transformer and adapted InternVideo-Next with low-rank adaptation (LoRA) for Scratch-AID+, a framework for automated mouse scratching detection",
+          "Benchmarked on held-out videos from four external labs under realistic sparse-event evaluation; InternVideo-Next achieved 81.19% mean scratching-class F1, exceeding Scratch-AID by 14.88 percentage points, averaged over six preprocessing configurations",
         ],
-        tags: ["Video Swin Transformer", "InternVideo-Next", "LoRA", "PyTorch", "Slurm"],
+        tags: ["Scratch-AID+", "Video Swin Transformer", "InternVideo-Next", "LoRA", "PyTorch", "Slurm"],
       },
     ],
   },
@@ -183,13 +183,15 @@ export const researchProjects: Project[] = [
 
 export const publications: Publication[] = [
   {
-    authors: "Qiu, Z., Pan, A., & Qi, L.",
+    authors:
+      "Yang, S.*, Pan, A.*, Shin, H.*, Chen, H.*, Zhang, Z., Shad, A., Huang, W., Liu, Y., Liu, W., Luo, H., Xu, C., Chen, J., Xu, M., Luo, W., Yu, H., & Shen, L.",
     title:
-      "Incorporating dynamic attention gating mechanism and pre-trained embedding for Chinese clinical named entity recognition",
-    journal: "Procedia Computer Science",
-    year: 2023,
-    volume: "226",
-    pages: "113\u2013119",
+      "Towards Robust Automated Mouse Scratching Behavior Detection for Itch Research",
+    journal: "AI4BioSig 2026 (IEEE BIBM 2026 Workshop)",
+    year: 2026,
+    status: "accepted",
+    contributionNote: "* Equal contribution (co-first authors).",
+    link: "https://www.biorxiv.org/content/10.64898/2026.10.12.758682v1",
   },
   {
     authors: "Pan, A., Zhai, T., Lee, J., Zheng, C., Kim, D., & Shen, L.",
@@ -198,6 +200,16 @@ export const publications: Publication[] = [
     journal: "AMIA 2027 Amplify Informatics Summit (regular paper)",
     year: 2026,
     status: "submitted",
+    link: "https://www.biorxiv.org/content/10.64898/2026.10.14.759026v1",
+  },
+  {
+    authors: "Qiu, Z., Pan, A., & Qi, L.",
+    title:
+      "Incorporating dynamic attention gating mechanism and pre-trained embedding for Chinese clinical named entity recognition",
+    journal: "Procedia Computer Science",
+    year: 2023,
+    volume: "226",
+    pages: "113\u2013119",
   },
 ];
 
@@ -324,7 +336,7 @@ export const skills: SkillCategory[] = [
 
 export const awards: Award[] = [
   {
-    title: "Outstanding Winner & COMAP Scholarship Award",
+    title: "Outstanding Winner (Top 0.2%), COMAP Scholarship Award & ASA Award",
     detail: "Mathematical Contest in Modeling, International Level",
     date: "May 2023",
   },

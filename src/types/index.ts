@@ -38,7 +38,8 @@ export interface Publication {
   volume?: string;
   pages?: string;
   link?: string;
-  status?: "submitted";
+  status?: "submitted" | "accepted";
+  contributionNote?: string;
 }
 
 export interface Project extends ProjectDetails {
