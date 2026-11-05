@@ -59,7 +59,7 @@ export const about = {
   summary: [
     "I am a dual-degree M.S. student in Computer and Information Science and Bioengineering at the University of Pennsylvania (2024\u20132027). My research interests include agentic AI, AI for healthcare, computer vision, and computational drug discovery.",
     "I am a Graduate Student Researcher in Shen Lab, spanning Penn Engineering (CIS) and Penn Medicine, advised by Professor Li Shen. My current work focuses on Alzheimer\u2019s disease drug discovery with integrated target evidence and Boltz-2 affinity fine-tuning, and automated mouse scratching detection with video transformers in Scratch-AID+. I also build and deploy AI agents.",
-    "Previously, I earned a B.Eng. in Biomedical Engineering with First Class Honours from the University of Dundee through a joint programme with Northeastern University, China.",
+    "Previously, I earned a B.Eng. in Biomedical Engineering with First Class Honours through the joint undergraduate programme between Northeastern University, China, and the University of Dundee, UK.",
   ],
   info: [
     { label: "Affiliation", value: "Shen Lab, University of Pennsylvania" },
@@ -76,9 +76,9 @@ export const education: Education[] = [
     period: "2024 \u2013 2027 (expected)",
   },
   {
-    institution: "University of Dundee",
+    institution: "Northeastern University, China",
     program:
-      "Joint Undergraduate Programme with Northeastern University, China",
+      "Joint Undergraduate Programme with University of Dundee, UK",
     degree: "B.Eng. in Biomedical Engineering",
     period: "2020 \u2013 2024",
     honors: "First Class Honours",
