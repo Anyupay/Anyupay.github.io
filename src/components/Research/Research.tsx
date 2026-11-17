@@ -37,7 +37,7 @@ export default function Research() {
       <div className={styles.container}>
         <SectionHeader
           title="Research Experience"
-          subtitle="Machine learning for drug discovery, behavior analysis, and medical imaging"
+          subtitle="AI for healthcare and evidence-grounded LLM agents"
         />
         <div className={styles.cards}>
           {research.map((project) => (
@@ -45,11 +45,12 @@ export default function Research() {
               <div className={styles.cardHeader}>
                 <h3 className={styles.cardTitle}>{project.title}</h3>
                 <p className={styles.meta}>
-                  {project.affiliation} &middot; {project.role} &middot;{" "}
+                  {project.affiliation && <>{project.affiliation} &middot; </>}
+                  {project.role} &middot;{" "}
                   {project.period}
                 </p>
                 {"projects" in project && (
-                  <p className={styles.meta}>PI: {project.principalInvestigator}</p>
+                  <p className={styles.meta}>Advisor: {project.advisor}</p>
                 )}
               </div>
               {"projects" in project ? (
@@ -57,7 +58,9 @@ export default function Research() {
                   <div key={subproject.title} className={styles.subproject}>
                     <div className={styles.cardHeader}>
                       <h4 className={styles.cardTitle}>{subproject.title}</h4>
-                      <p className={styles.meta}>{subproject.period}</p>
+                      {subproject.period && (
+                        <p className={styles.meta}>{subproject.period}</p>
+                      )}
                     </div>
                     <ResearchDetails project={subproject} />
                   </div>

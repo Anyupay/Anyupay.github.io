@@ -2,6 +2,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
 import About from "./components/About/About";
 import Education from "./components/Education/Education";
+import AcademicExchange from "./components/Education/AcademicExchange";
 import Research from "./components/Research/Research";
 import Publications from "./components/Publications/Publications";
 import Projects from "./components/Projects/Projects";
@@ -21,9 +22,10 @@ export default function App() {
       <Research />
       <Publications />
       <Projects />
+      <Experience />
       <Skills />
       <Awards />
-      <Experience />
+      <AcademicExchange />
       <Contact />
       <Footer />
     </>

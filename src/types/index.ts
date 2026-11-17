@@ -1,7 +1,7 @@
 export interface Education {
   institution: string;
   program: string;
-  degree: string;
+  degrees: string[];
   period: string;
   honors?: string;
   details?: string[];
@@ -9,7 +9,7 @@ export interface Education {
 
 export interface ProjectDetails {
   title: string;
-  period: string;
+  period?: string;
   bullets: string[];
   tags: string[];
   link?: string;
@@ -19,14 +19,15 @@ export interface ProjectDetails {
 export interface ResearchProject extends ProjectDetails {
   affiliation: string;
   role: string;
+  period: string;
 }
 
 export interface ResearchGroup {
   title: string;
-  affiliation: string;
+  affiliation?: string;
   role: string;
   period: string;
-  principalInvestigator: string;
+  advisor: string;
   projects: ProjectDetails[];
 }
 
@@ -45,6 +46,7 @@ export interface Publication {
 export interface Project extends ProjectDetails {
   role: string;
   affiliation?: string;
+  period: string;
 }
 
 export interface Award {

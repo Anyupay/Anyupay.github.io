@@ -14,7 +14,11 @@ export default function Education() {
               key={edu.institution}
               period={edu.period}
               title={edu.institution}
-              subtitle={edu.degree}
+              subtitle={edu.degrees.map((degree) => (
+                <span key={degree} className={styles.degree}>
+                  {degree}
+                </span>
+              ))}
               description={edu.program}
               extra={edu.honors}
             />

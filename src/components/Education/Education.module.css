@@ -11,3 +11,7 @@
 .timeline {
   max-width: 650px;
 }
+
+.degree {
+  display: block;
+}

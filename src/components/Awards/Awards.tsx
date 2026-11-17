@@ -6,7 +6,7 @@ export default function Awards() {
   return (
     <section className={styles.section} id="awards">
       <div className={styles.container}>
-        <SectionHeader title="Awards & Honors" />
+        <SectionHeader title="Honors & Awards" />
         <ul className={styles.list}>
           {awards.map((award, i) => (
             <li key={i} className={styles.item}>

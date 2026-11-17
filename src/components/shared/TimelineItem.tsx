@@ -1,9 +1,10 @@
+import type { ReactNode } from "react";
 import styles from "./TimelineItem.module.css";
 
 interface Props {
   period: string;
   title: string;
-  subtitle?: string;
+  subtitle?: ReactNode;
   description?: string;
   extra?: string;
 }
