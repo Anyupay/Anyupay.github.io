@@ -59,7 +59,7 @@ export const about = {
   summary: [
     "I am a dual-degree M.S. student in Computer and Information Science and Bioengineering at the University of Pennsylvania (2024\u20132027). My research interests include AI for healthcare, agentic AI, computer vision, and computational drug discovery.",
     "I am a Graduate Student Researcher in Shen Lab at the University of Pennsylvania, advised by Professor Li Shen. My current work focuses on automated mouse scratching detection with video transformers in Scratch-AID+ and Alzheimer\u2019s disease drug discovery with integrated target evidence and Boltz-2 affinity fine-tuning.",
-    "I am also a Student Researcher at Florida International University, advised by Professor Wenbin Zhang, where I build evidence-grounded LLM agents for document drafting and review, with source verification and sentence-level links to supporting evidence.",
+    "I am also a Student Researcher at Florida International University, advised by Professor Wenbin Zhang, where I develop evidence-grounded multi-agent workflows for legal drafting and scientific influence analysis.",
     "Previously, I earned a B.Eng. in Biomedical Engineering with First Class Honours through the joint undergraduate programme between Northeastern University, China, and the University of Dundee, UK.",
   ],
   info: [
@@ -120,12 +120,12 @@ export const research: (ResearchProject | ResearchGroup)[] = [
     advisor: "Prof. Wenbin Zhang",
     projects: [
       {
-        title: "Evidence-Grounded LLM Agents for Document Drafting and Review",
+        title: "Evidence-Grounded Multi-Agent Workflow for Long-Form Legal Drafting",
         bullets: [
-          "Built an agent workflow for immigration document drafting and review, integrating a 23-tool MCP server with researcher and adversarial-reviewer sub-agents",
-          "Implemented checks to verify direct quotations against source text and link drafted sentences to specific source pages, using a library of 1,100+ registered sources",
+          "Designed a researcher\u2013adversarial-reviewer workflow with MCP tools to draft legal documents, verify quotations, trace source pages, and flag unsupported claims",
+          "Extended the workflow to agent-driven evidence discovery, combining OpenAlex analysis of 3.1M AI authors with citation-context analysis to identify evidence of scientific influence",
         ],
-        tags: ["LLM Agents", "MCP", "Source Verification", "Document Review"],
+        tags: ["Multi-Agent Systems", "MCP", "OpenAlex", "Evidence Discovery", "Citation Analysis"],
       },
     ],
   },
